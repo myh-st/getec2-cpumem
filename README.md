@@ -9,7 +9,7 @@ Download script then execute command below:
     
     chmod +x getec2-cpumem.sh
     
-    ./getec2-cpumem AWSprofileName
+    ./getec2-cpumem.sh AWSprofileName
 
 # Staging result
     instancesID,MEMORYINFO,CpuCoreCount
