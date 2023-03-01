@@ -21,4 +21,4 @@ Download script then execute command below:
     i-026xxxxxxxxxxx,8GB,1
     i-038xxxxxxxxxxx,32GB,2
 
-  output file :  ec2-instances-<AWSprofileName>.csv
+  output file :  ec2-instances-(AWSprofileName).csv
