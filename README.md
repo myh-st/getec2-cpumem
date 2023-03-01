@@ -12,6 +12,8 @@ Download script then execute command below:
     ./getec2-cpumem.sh AWSprofileName
 
 # Staging result
+mapping instancesType from describe-instances command and replace to MEMORYINFO from describe-instance-types command
+
     instancesID,MEMORYINFO,CpuCoreCount
     i-026xxxxxxxxxxx,8192,1
     i-038xxxxxxxxxxx,32768,2
