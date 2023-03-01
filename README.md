@@ -4,8 +4,11 @@ get all ec2 instances id, cpu and memory to csv file with specific aws profile
 # Usage
 
 Download script then execute command below:
+
     wget https://github.com/myh-st/getec2-cpumem/blob/main/getec2-cpumem.sh
+    
     chmod +x getec2-cpumem.sh
+    
     ./getec2-cpumem AWSprofileName
 
 # Staging result
