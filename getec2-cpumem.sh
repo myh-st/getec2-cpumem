@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $# -ne 1 ]; then
-  echo "Usage: getec2-cpumem.sh profileName "
-  echo "./getec2-cpumem.sh profileName"
+  echo "Usage: getec2-cpumem.sh AWSprofileName "
+  echo "./getec2-cpumem.sh AWSprofileName"
   exit 1
 fi
 
