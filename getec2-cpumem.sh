@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $# -ne 1 ]; then
-  echo "Usage: script.sh arg1 "
-  echo "./script profileName"
+  echo "Usage: getec2-cpumem.sh profileName "
+  echo "./getec2-cpumem.sh profileName"
   exit 1
 fi
 
