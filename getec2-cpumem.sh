@@ -13,8 +13,9 @@ aws ec2 describe-instances \
 --query 'Reservations[*].Instances[*].[InstanceId, InstanceType, CpuOptions.ThreadsPerCore]' \
 --output json \
 --profile $AWS_PROFILE | jq -r '.[][] | @csv' | tr -d '"' | while IFS=, read -r id type cores; do \
+  cpu=$(aws ec2 describe-instance-types --query "InstanceTypes[?InstanceType=='$type'].VCpuInfo.DefaultVCpus" --output text --profile $AWS_PROFILE); \
   memory=$(aws ec2 describe-instance-types --query "InstanceTypes[?InstanceType=='$type'].MemoryInfo.SizeInMiB" --output text --profile $AWS_PROFILE); \
-  echo "$id,$memory,$cores"; \
+  echo "$id,$memory,$cpu"; \
 done >> ec2-instances-$AWS_PROFILE.csv
 
 # Convert memory mb to GB
