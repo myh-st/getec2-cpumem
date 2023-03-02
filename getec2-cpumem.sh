@@ -10,7 +10,7 @@ AWS_PROFILE="$1"
 # Get instances id mem cpu write output to ec2-instances-$AWS_PROFILE.csv
 echo "instancesID,MEMORYINFO,CpuCoreCount" > ec2-instances-$AWS_PROFILE.csv && \
 aws ec2 describe-instances \
---query 'Reservations[*].Instances[*].[InstanceId, InstanceType, CpuOptions.CoreCount]' \
+--query 'Reservations[*].Instances[*].[InstanceId, InstanceType, CpuOptions.ThreadsPerCore]' \
 --output json \
 --profile $AWS_PROFILE | jq -r '.[][] | @csv' | tr -d '"' | while IFS=, read -r id type cores; do \
   memory=$(aws ec2 describe-instance-types --query "InstanceTypes[?InstanceType=='$type'].MemoryInfo.SizeInMiB" --output text --profile $AWS_PROFILE); \
